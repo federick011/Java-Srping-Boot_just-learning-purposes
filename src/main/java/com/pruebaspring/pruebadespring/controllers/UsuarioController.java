@@ -40,14 +40,12 @@ public class UsuarioController implements UsuarioDao
     }
 
     @RequestMapping(value = "pruebaget", method = RequestMethod.GET)
-    @Override
     public List<Usuario> GetUser()
     {
         return usuarioDao.GetUser();
     }
 
     @RequestMapping(value = "pruebaget/{id}", method = RequestMethod.GET)
-    @Override
     public List<Usuario> GetUser(@PathVariable long id) {
         return usuarioDao.GetUser(id);
     }

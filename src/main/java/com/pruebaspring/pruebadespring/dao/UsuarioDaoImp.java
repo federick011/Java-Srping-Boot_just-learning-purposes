@@ -29,9 +29,11 @@ public class UsuarioDaoImp implements  UsuarioDao
     }
 
     @Override
-    public List<Usuario> GetUser(long id) {
+    public List<Usuario> GetUser(long id) {//parametro del WHERE
         String query = "FROM Usuario WHERE id = :id";
-        return entityManager.createQuery(query).getResultList();
+        return entityManager.createQuery(query)
+                .setParameter("id", id)
+                .getResultList();
     }
 
     @Override

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
+@RequestMapping(path = "api/comments")
 public class CommentController implements CommentDao
 {
     @Autowired
@@ -29,7 +30,6 @@ public class CommentController implements CommentDao
     }
 
     @RequestMapping(value = "showcomment", method = RequestMethod.GET)
-    @Override
     public List<Comment> ShowComment()
     {
         return commentDao.ShowComment();
